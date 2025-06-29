@@ -1,32 +1,21 @@
-# **Exercício 4**
+# **Exercício 5**
 
-**Exercício 4**
-
-Neste exercício, você irá evoluir o DAPP que desenvolvemos na aula anterior, adicionando novas funcionalidades para aprimorar a interação entre o frontend e o backend. O objetivo é praticar a integração dessas duas camadas, consolidando seus conhecimentos em desenvolvimento full-stack na blockchain Internet Computer (ICP).
+Neste exercício, você irá evoluir o DAPP que desenvolvemos na aula anterior, adicionando uma tela para autenticação do usuário utilizando o Internet Identity.
 
 Instruções:
 
-## **Listar Total de "Tarefas em Andamento"**
+## **Adicionar uma nova função para o botão "Entrar"**
 
-- Adicionar um totalizador ao final da lista de **tarefas em andamento**. Este totalizador deverá apresentar a quantidade de tarefas que estão em andamento, conforme ilustrado na imagem abaixo.
+- Quando o usuário clicar no botão **ENTRAR** da tela inicial, o Dapp deverá apresentar a tela de autenticação que vimos na aula passada, exemplo:
     
-    ![](https://aprendaicp.xyz/exercicio1_4i1.jpg)
+    ![](https://aprendaicp.xyz/exercicio1_5i1.jpg)
     
-- Crie uma função no frontend chamada `totalTarefasEmAndamento` esta função deverá realizar uma chamada para a função `totalTarefasEmAndamento` que será adicionada ao backend. O número retornado por esta função deverá ser apresentado na tela no campo **TOTAL** (da lista de tarefas em andamento).
-- Crie uma função no backend chamada `totalTarefasEmAndamento`. Esta função deve retornar a quantidade de tarefas presentes no **Buffer** `tarefas` que possuem o atributo `concluida` definido como **false**. O retorno deverá ser do tipo `Nat`.
-- No frontend a função `totalTarefasEmAndamento` deverá ser chamada sempre`useEffect` for executado.
-- No frontend a função `totalTarefasEmAndamento` deverá ser chamada sempre uma tarefa for incluída, excluida ou concluída.
-
-## **Listar Total de Tarefas "Concluídas"**
-
-- Adicionar um totalizador ao final da lista de **tarefas concluídas**. Este totalizador deverá apresentar a quantidade de tarefas que estão concluídas, conforme ilustrado na imagem abaixo.
+    Após clicar neste botão, deverá ser apresentada a tela de autenticação conforme exemplo abaixo:
     
-    ![](https://aprendaicp.xyz/exercicio1_4i2.jpg)
+    ![](https://aprendaicp.xyz/trilha1_5i6.png)
     
-- Crie uma função no frontend chamada `totalTarefasConcluidas` esta função deverá realizar uma chamada para a função `totalTarefasConcluidas` que será adicionada ao backend. O número retornado por esta função deverá ser apresentado na tela no campo **TOTAL** (da lista de tarefas concluídas).
-- Crie uma função no backend chamada `totalTarefasConcluidas`. Esta função deve retornar a quantidade de tarefas presentes no **Buffer** `tarefas` que possuem o atributo `concluida` definido como **true**. O retorno deverá ser do tipo `Nat`.
-- No frontend a função `totalTarefasConcluidas` deverá ser chamada sempre`useEffect` for executado.
-- No frontend a função `totalTarefasConcluidas` deverá ser chamada sempre uma tarefa for concluída.
+    O Dapp deverá redirecionar o usuário para tela **Tarefas** apenas se o usuário concluir a autenticação.
+    
 
 ## **Publicação do DAPP**
 
@@ -35,10 +24,6 @@ Instruções:
 
 ### **Dicas:**
 
-- Uma alternativa para implementar as funções `totalTarefasEmAndamento` e `totalTarefasConcluidas` no backend, para contagem das terafas (em andamento/concluídas) é utilizar uma estrutura **for**, como por exemplo: `for( value in tarefas.vals() )`. Neste caso você poderá ser acessar o valor dos atributos conforme este exemplo: `value.categoria` (neste caso estamos obtendo o valor de categoria). Outra alternativa é pesquisar uma função da biblioteca **Buffer** que permita filtrar itens de acordo com os critérios que você definir, e em seguida contar a quantidade de registros retornados, no final da aula  é apresentada uma lista de funções de **Buffer** que podem ser estudadas.
-    
-    Estrutura de dados Buffer
-    
-- No frontend ao receber o retorno do backend utilize a função `parseInt` do JavaScript para evitar qualquer tipo de incompatibilidade do dado recebido, exemplo: `parseInt(await to_do_backend.totalTarefasEmAndamento())`.
+- Para implentar esta funcionalidade você poderá se basear na função `login()` apresentada na ultima aula.
 - Certifique-se de que o código está bem organizado e comentado.
-- Teste as funções localmente antes de publicar o DAPP. Utilize o comando `dfx deploy` para gerar o Dapp localmente, e utilize a URL correspondente a interface de frontend para realizar os testes em um navegador web.
+- Teste as funções no **playground** antes de publicar o DAPP. Utilize o comando `dfx deploy --playground` para gerar o Dapp na rede de testes, e utilize a URL correspondente a interface de frontend para realizar os testes em um navegador web.
